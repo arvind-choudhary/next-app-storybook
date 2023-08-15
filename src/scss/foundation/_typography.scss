@@ -1,0 +1,27 @@
+$default-font-size: 0.5rem;
+$default-font-scale: 1.2;
+
+
+/**
+ * 
+ *      Text Font Sizes
+ * 
+ */
+
+ $font-size-8px: calc($default-font-size * $default-font-scale);
+ $font-size-10px: calc($font-size-8px * $default-font-scale);
+ $font-size-12px: calc($font-size-10px * $default-font-scale);
+ $font-size-14px: calc($font-size-12px * $default-font-scale);
+ $font-size-16px: calc($font-size-14px * $default-font-scale);
+
+ /**
+ *  
+ *      Heading Font Sizes
+ *  
+ */
+
+$h5-font-size: calc($font-size-16px * $default-font-scale);
+$h4-font-size: calc($h5-font-size * $default-font-scale);
+$h3-font-size: calc($h4-font-size * $default-font-scale);
+$h2-font-size: calc($h3-font-size * $default-font-scale);
+$h1-font-size: calc($h2-font-size * $default-font-scale);
