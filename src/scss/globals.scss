@@ -1,0 +1,299 @@
+@import '../scss/foundation/variables.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  
+  :root {
+
+    /*
+
+      DEFAULT SCALE VALUE OF THE FONT FOR THE APP
+
+    */
+
+    --scale-value: #{$scale-value}; // its value is 0.0625rem;
+    --header-font-scale: #{$headers-font-scale}; // its value is 1.25rem;
+
+    /**
+          BRAND PRIMARY COLORS
+    */
+    --brand-primary-1: #{$brand-primary-1};
+    --brand-primary-2: #{$brand-primary-2};
+    --brand-primary-2-hover: #{$brand-primary-hover-2};
+        
+    /**
+          BRAND SECONDARY COLORS
+    */
+    --brand-secondary-1: #{$brand-secondary-1};
+    --brand-secondary-2: #{$brand-secondary-2};
+    --brand-secondary-3: #{$brand-secondary-3};
+    --brand-secondary-4: #{$brand-secondary-4};
+    --brand-secondary-5: #{$brand-secondary-5};
+
+    /**
+              NEUTRAL COLORS
+    */
+    --neutral-black: #{$neutral-black};
+    --neutral-white: #{$neutral-white};     
+    --neutral-gray-1: #{$neutral-gray-1};
+    --neutral-gray-2: #{$neutral-gray-2};
+    --neutral-gray-3: #{$neutral-gray-3};
+    --neutral-gray-4: #{$neutral-gray-4};
+    --neutral-gray-5: #{$neutral-gray-5};
+    --neutral-gray-6: #{$neutral-gray-6};
+    --neutral-gray-7: #{$neutral-gray-7};
+
+    /**     
+    
+        STATES COLORS       
+            
+    **/
+    --state-info: #{$state-info};
+    --state-success: #{$state-success};
+    --state-warning: #{$state-warning};
+    --state-error: #{$state-error};
+
+    /*
+
+        FONT SCALE
+
+    */
+    --sm-font-size: calc(12 * var(--scale-value)); // smallest font size is 0.625rem
+    --md-font-size: calc(14 * var(--scale-value)); // medium font size is 0.78125rem
+    --df-font-size: calc(16 * var(--scale-value)); // default font size is 1rem 
+
+    --font-size-smallest: var(--sm-font-size); // 0.625rem
+    --font-size-small: var(--md-font-size);  // 0.78125rem
+    --font-size-normal: var(--df-font-size); // 1rem
+
+    --h5-font-size: calc(var(--font-size-normal) * var(--header-font-scale));  // 1.125rem
+    --h4-font-size: calc(var(--h5-font-size) * var(--header-font-scale));  // 
+    --h3-font-size: calc(var(--h4-font-size) * var(--header-font-scale));
+    --h2-font-size: calc(var(--h3-font-size) * var(--header-font-scale));
+    --h1-font-size: calc(var(--h2-font-size) * var(--header-font-scale));
+
+   --font-weight-regular: #{$font-weight-regular};
+   --font-weight-medium: #{$font-weight-medium};
+   --font-weight-bold: #{$font-weight-bold};
+
+    --btn-default-text-color: var(--neutral-white);
+    --btn-default-bg-color: var(--neutral-black);
+
+    --btn-primary-bg-color: var(--brand-primary-2);
+    --btn-primary-bg-hover-color: var(--brand-primary-2-hover);
+    --btn-primary-text-color: var(--neutral-white);
+    --btn-primary-text-hover-color: var(--neutral-gray-1);
+
+    --btn-secondary-bg-color: var(--brand-secondary-1);
+    --btn-secondary-text-color: var(--neutral-black);
+
+    --btn-info-bg-color: var(--state-info);
+    --btn-info-text-color: var(--neutral-white);
+
+    --btn-success-bg-color: var(--state-success);
+    --btn-success-text-color: var(--neutral-white);
+
+    --btn-warning-bg-color: var(--state-warning);
+    --btn-warning-text-color: var(--neutral-black);
+
+    --btn-error-bg-color: var(--state-error);
+    --btn-error-text-color: var(--neutral-white);
+
+    
+    --btn-font-size: var(--font-size-normal);
+    --btn-size-x: var(--btn-font-size);
+    --btn-size-y: var(--btn-font-size);
+    --btn-text-color: var(--btn-default-text-color);
+    --btn-bg-color: var(--btn-default-bg-color);
+    --btn-padding-x: calc(var(--btn-size-x) * 1.5);
+    --btn-padding-y: calc(var(--btn-size-y) * 1);
+    --btn-margin-x: calc(var(--btn-font-size) * 1);
+    --btn-opacity: 1;
+
+    --icon-size-max: ;
+    --icon-size: var(--neutral-white);
+    --icon-stroke-color: var(--neutral-white);
+    
+  }
+
+  *,
+  *::after,
+  *::before {
+    @apply box-border;
+  }
+
+  [tabindex]:focus {
+    @apply outline-2 outline-red-700;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+    overflow-wrap: break-word;
+    font-weight: var(--font-weight-medium);
+    font-family: inherit;
+  }
+
+  img {
+    display: block;
+    max-block-size: 100%;
+  }
+
+  svg {
+    @apply aspect-auto;
+  }
+
+  p,span,i {
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-medium);
+  }
+
+  button {
+    background: unset;
+    border: unset;
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-medium);
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  body {
+    font-size: var(--font-size-normal);
+  }
+
+  .h1 {
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-weight-bold);
+  }
+  .h2 {
+    font-size: var(--h2-font-size);
+  }
+  .h3 {
+    font-size: var(--h3-font-size);
+  }
+  .h4 {
+    font-size: var(--h4-font-size);
+  }
+  .h5 {
+    font-size: var(--h5-font-size);
+  }
+
+}
+
+@layer components {
+
+  .btn {
+
+    --btn-bg-color: var(--btn-default-bg-color);
+    --btn-text-color: var(--btn-default-text-color);
+
+    &-primary {
+      --btn-bg-color: var(--btn-primary-bg-color);
+      --btn-text-color: var(--btn-primary-text-color);
+      &:hover {
+        --btn-bg-color: var(--btn-primary-bg-hover-color);
+        --btn-text-color: var(--btn-primary-text-hover-color);
+        --icon-stroke-color: var(--btn-bg-color);
+      }
+    }
+
+    &-secondary {
+      --btn-bg-color: var(--btn-secondary-bg-color);
+      --btn-text-color:  var(--btn-secondary-text-color);
+      &:hover {
+        --icon-stroke-color: var(--btn-bg-color);
+      }
+    }
+
+    &-info {
+      --btn-bg-color: var(--btn-info-bg-color);
+      --btn-text-color: var(--btn-info-text-color);
+      &:hover {
+      }
+    }
+
+    &-error {
+      --btn-bg-color: var(--btn-error-bg-color);
+      --btn-text-color: var(--btn-error-text-color);
+      &:hover {
+      }
+    }
+
+    &-warning {
+      --btn-bg-color: var(--btn-warning-bg-color);
+      --btn-text-color: var(--btn-warning-text-color);
+      &:hover {
+      }
+    }
+
+    &-success {
+      --btn-bg-color: var(--btn-success-bg-color);
+      --btn-text-color: var(--btn-success-text-color);
+      &:hover {
+      }
+    }
+
+    &-size {
+      &-sm {
+        --btn-padding-x: var(--spacing-12);
+        --btn-padding-y: var(--spacing-8);
+      }
+      &-md {
+        --btn-padding-x: var(--spacing-16);
+        --btn-padding-y: var(--spacing-12);
+      }
+      &-lg {
+        --btn-padding-x: var(--spacing-24);
+        --btn-padding-y: var(--spacing-18);
+      }
+    }
+
+    &-icon {
+      @apply mx-2;
+    }
+
+    color: var(--btn-text-color);
+    opacity: var(--btn-opacity);
+    background-color: var(--btn-bg-color);
+    font-size: var(--btn-font-size);
+
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    width: inherit;
+  }
+
+  .modal {
+    @apply fixed inset-0 flex justify-center items-center;
+    &-overlay {
+      @apply absolute inset-0 h-screen w-screen bg-black opacity-20 z-10;
+    }
+  }
+
+  .icon {
+    @apply aspect-square;
+    &-size {
+      @apply flex-inline p-0.5 w-6; 
+      &-md { @apply w-5; }
+      &-sm { @apply w-4; }
+    }
+    &-color {
+      &-white {
+        --icon-stroke-color: var(--neutral-white);
+      }
+      &-black {
+        --icon-stroke-color: var(--neutral-black);
+      }
+    }
+    stroke: var(--icon-stroke-color);
+  }
+  
+  h1 {
+    @apply h1;
+  }
+  
+}
